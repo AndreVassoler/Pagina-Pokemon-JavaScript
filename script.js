@@ -1,220 +1,259 @@
+const container = document .querySelector('#Header');
+const titulo = document.createElement('h1')
 
-const container = document.querySelector('#container');
+titulo.textContent = 'Squirtle';
+container.appendChild(titulo);
 
-const novoTitulo = document.createElement('h1');
+// =========== NAV ===========
 
-novoTitulo.textContent = 'Squirtle';
-
-container.appendChild(novoTitulo);
-
-// ======== NAV ==========
-
-const NavPrincipal = document.querySelector('#NavPrincipal');
-
-const novoNav = document.createElement('nav');
-
-const ul = document.createElement('ul');
+const navPrincipal = document.querySelector('#navPrincipal');
+const nav = document.createElement('nav');
+const navUl = document.createElement('ul');
 
 const opcoes = [
-    { nome: 'Informações sobre Squirtle', url: '#' },
-    { nome: 'Características', url: '#' },
-    { nome: 'Curiosidade', url: '#' },
-    { nome: 'Artigos sobre Squirtle', url: '#' },
-    { nome: 'Recursos Adicionais', url: '#' },
-    { nome: 'Evolução', url: '#' }
+  { nome: 'Informações sobre Squirtle', url: '#Informacao' },
+  { nome: 'Características', url: '#Caracteristicas' },
+  { nome: 'Curiosidade', url: '#Curiosidade' },
+  { nome: 'Artigos sobre Squirtle', url: '#Artigos' },
+  { nome: 'Recursos Adicionais', url: '#Recursos' },
+  { nome: 'Evolução', url: '#Evolucao' }
 ];
 
 opcoes.forEach(opcao => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.textContent = opcao.nome;
-    a.href = opcao.url;
-    li.appendChild(a);
-    ul.appendChild(li);
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+
+  a.textContent = opcao.nome;
+  a.href = opcao.url;
+  li.appendChild(a);
+  navUl.appendChild(li);
 });
 
-novoNav.appendChild(ul);
+nav.appendChild(navUl);
+container.appendChild(nav);
 
-container.appendChild(novoNav);
+// =========== SECTION ===========
 
+const section = document.getElementById('Informacao');
+const novaSection = document.createElement('section');
 
-// ================== Section =================
+novaSection.classList.add('informacao');
+section.appendChild(novaSection);  
 
-const mainContent = document.getElementById('Informacao');
+const h2 = document.createElement('h2');
 
-const newSection = document.createElement('section');
+h2.textContent = 'Informações sobre Squirtle';
+novaSection.appendChild(h2);
 
-newSection.classList.add('nova-section');
+const novaDiv = document.createElement('div');
 
-mainContent.appendChild(newSection);
-
-const newHeading = document.createElement('h2');
-
-newHeading.textContent = 'Informações do Squirtle';
-
-newSection.appendChild(newHeading);
-
-const newDiv = document.createElement('div');
-
-newDiv.classList.add('squirtle-img');
+novaDiv.classList.add('Squirtle-img');
 
 const img1 = document.createElement('img');
-img1.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png';
-img1.alt = 'Squirtle - Pokemon de Água';
+img1.src = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png';
+img1.alt = 'Squirtle - Pokémon Aquático';
+img1.id = 'info-squirtle';
 
 const img2 = document.createElement('img');
 img2.src = 'https://archives.bulbagarden.net/media/upload/thumb/7/79/Squirtle_SSBU.png/200px-Squirtle_SSBU.png';
-img2.alt = 'Squirtle - Pokemon de Agua';
+img2.alt = 'Squirtle - Pokémon Aquático';
+img2.id = 'info-squirtle';
 
-newDiv.appendChild(img1);
-newDiv.appendChild(img2);
+novaDiv.appendChild(img1);
+novaDiv.appendChild(img2);
 
-newSection.appendChild(newDiv);
+novaSection.appendChild(novaDiv);
 
-const newParagraph = document.createElement('p');
+const novoParagrafo = document.createElement('p');
 
-newParagraph.textContent = ' Squirtle é um Pokémon do tipo Água. É o Pokémon inicial da região de Kanto e evolui para Wartortle.';
+novoParagrafo.textContent = 'Squirtle é um Pokémon do tipo Água. É o Pokémon inicial da região de Kanto e evolui para Wartortle.'
+novaSection.appendChild(novoParagrafo);
 
-newSection.appendChild(newParagraph);
+// =========== CARACTERISTICAS ===========
 
-// ================== Section 2 =================
+const caracteristicas = document.getElementById('Caracteristicas');
+const novaCaracteristica = document.createElement('section');
 
-  const mainContent2 = document.getElementById('Caracteristicas');
+novaCaracteristica.classList.add('caracteristicas');
+caracteristicas.appendChild(novaCaracteristica);
 
-  const newSection2 = document.createElement('Caracteristicas');
-  
-  newSection2.classList.add('nova-section');
-  
-  mainContent2.appendChild(newSection2);
-  
-  const newHeading2 = document.createElement('h2');
-  
-  newHeading2.textContent = 'Caracteristicas';
-  
-  newSection2.appendChild(newHeading2);
-  
-  const newDiv2 = document.createElement('div');
-  
-  newDiv2.classList.add('squirtle-img');
-  
-  newSection2.appendChild(newDiv2);
-  
-  const newParagraph2 = document.createElement('p');
-  
-  newParagraph2.textContent = 'Squirtle é conhecido por sua concha nas costas, que oferece proteção adicional. Ele possui ataques de água poderosos, como Water Gun e Hydro Pump.';
-  
-  newSection2.appendChild(newParagraph2);
+const h2Caracteristicas = document.createElement('h2');
 
-  // =========== Curiosidade =================
- 
-  // =========== Artigo ================
+h2Caracteristicas.textContent = 'Características';
+novaCaracteristica.appendChild(h2Caracteristicas);
 
-const novoArticle = document.createElement('article');
+const novaDivCaracteristicas = document.createElement('div');
 
-const h2Artigo = document.createElement('h2');
-h2Artigo.textContent = 'Squirtle: O Amigo Aquático';
+novaDivCaracteristicas.classList.add('Squirtle-img');
 
-novoArticle.appendChild(h2Artigo);
+novaCaracteristica.appendChild(novaDivCaracteristicas);
+
+const novoParagrafoCaracteristicas = document.createElement('p');
+
+novoParagrafoCaracteristicas.textContent = 'Squirtle é conhecido por sua concha nas costas, que oferece proteção adicional. Ele possui ataques de água poderosos, como Water Gun e Hydro Pump.'  
+novaCaracteristica.appendChild(novoParagrafoCaracteristicas);
+
+// =========== CURIOSIDADE ===========
+
+const curiosidade = document.getElementById('Curiosidade');
+const novaCuriosidade = document.createElement('section');
+
+novaCuriosidade.classList.add('curiosidade');
+curiosidade.appendChild(novaCuriosidade);
+
+const h2Curiosidade = document.createElement('h2');
+
+h2Curiosidade.textContent = 'Curiosidade';
+novaCuriosidade.appendChild(h2Curiosidade);
+
+const novaUlCuriosidade = document.createElement('ul');
+
+const curiosidades = [
+  'Squirtle é um dos Pokémon mais populares e adoráveis.',
+  'Seu nome deriva das palavras "squirrel" (esquilo) e "turtle" (tartaruga).',
+  'Squirtle é frequentemente escolhido por treinadores para começar sua jornada Pokémon.'
+];
+
+curiosidades.forEach(curiosidade => {
+  const li = document.createElement('li');
+  li.textContent = '🔍 ' + curiosidade;
+  novaUlCuriosidade.appendChild(li);
+});
+
+novaCuriosidade.appendChild(novaUlCuriosidade);
+
+// ========== ARTIGOS ===========
+
+const artigos = document.getElementById('Artigos');
+const novaArtigos = document.createElement('section');
+
+novaArtigos.classList.add('artigos');
+artigos.appendChild(novaArtigos);
+
+const h2Artigos = document.createElement('h2');
+
+h2Artigos.textContent = 'Squirtle: O Amigo Aquático';
+novaArtigos.appendChild(h2Artigos);
 
 const p1 = document.createElement('p');
-p1.textContent = ' Squirtle, com sua aparência simpática e sua habilidade em controlar a água, conquistou o coração de treinadores Pokémon ao redor do mundo. Sendo o inicial de água na região de Kanto, Squirtle é uma escolha popular para aqueles que buscam equilíbrio e versatilidade em suas equipes.';
-novoArticle.appendChild(p1);
+p1.textContent = 'Squirtle, com sua aparência simpática e sua habilidade em controlar a água, conquistou o coração de treinadores Pokémon ao redor do mundo. Sendo o inicial de água na região de Kanto, Squirtle é uma escolha popular para aqueles que buscam equilíbrio e versatilidade em suas equipes.';
+novaArtigos.appendChild(p1);
 
 const p2 = document.createElement('p');
 p2.textContent = 'Sua concha nas costas não apenas oferece proteção, mas também é um símbolo de resistência. Ao evoluir para Wartortle e, posteriormente, para Blastoise, Squirtle se transforma em uma força formidável, dominando ataques aquáticos que podem surpreender adversários em batalhas.';
-novoArticle.appendChild(p2);
+novaArtigos.appendChild(p2);
 
 const p3 = document.createElement('p');
 p3.textContent = 'Além de suas habilidades de batalha, Squirtle é conhecido por seu carisma. Treinadores muitas vezes descrevem a relação com seu Squirtle como uma amizade profunda, tornando-o não apenas um companheiro de lutas, mas um amigo leal ao longo de suas jornadas.';
-novoArticle.appendChild(p3);
+novaArtigos.appendChild(p3);
 
-novoArticle.id = 'artigo';
+// ========== RECURSOS ADICIONAIS ===========
 
-novoArticle.classList.add('outra-section');
+const recursosAdicionais = document.getElementById('Recursos');
+const novaRecursosAdicionais = document.createElement('section');
 
-mainContent.appendChild(novoArticle);
+novaRecursosAdicionais.classList.add('recursos-adicionais');
+recursosAdicionais.appendChild(novaRecursosAdicionais);
 
-//============== Recursos Adicionais ================
+const h2RecursosAdicionais = document.createElement('h2');
 
-const novaSection = document.createElement('section');
+h2RecursosAdicionais.textContent = 'Recursos Adicionais';
+novaRecursosAdicionais.appendChild(h2RecursosAdicionais);
 
-const h2Section = document.createElement('h2');
-h2Section.textContent = 'Título da Seção';
+const novaUlRecursosAdicionais = document.createElement('ul');
 
-novaSection.appendChild(h2Section);
+const recursos = [
+  { nome: 'Pokédex - Squirtle', url: 'https://www.pokemon.com/br/pokedex/squirtle'},
+  { nome: 'Bulbapedia - Squirtle', url: 'https://bulbapedia.bulbagarden.net/wiki/Squirtle_(Pok%C3%A9mon)' }
+];
 
-const listaLinks = document.createElement('ul');
+recursos.forEach(recurso => {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
 
-const linkContainer1 = document.createElement('a');
-linkContainer1.href = '#';
+  a.textContent = recurso.nome;
+  a.href = recurso.url;
+  li.appendChild(a);
+  novaUlRecursosAdicionais.appendChild(li);
+});
 
-const item1 = document.createElement('li');
-item1.appendChild(linkContainer1);
+novaRecursosAdicionais.appendChild(novaUlRecursosAdicionais);
 
-const link1 = document.createElement('a');
-link1.href = 'https://www.pokemon.com/br/pokedex/squirtle';
-link1.textContent = 'Pokédex - Squirtle';
+// ========== EVOLUÇÃO ===========
 
-linkContainer1.appendChild(link1);
+const evolucao = document.getElementById('Evolucao');
+const novaEvolucao = document.createElement('section');
 
-const linkContainer2 = document.createElement('a');
-linkContainer2.href = '#';
+novaEvolucao.classList.add('evolucao');
+evolucao.appendChild(novaEvolucao);
 
-const item2 = document.createElement('li');
-item2.appendChild(linkContainer2);
+const h2Evolucao = document.createElement('h2');
 
-const link2 = document.createElement('a');
-link2.href = 'https://bulbapedia.bulbagarden.net/wiki/Squirtle_(Pok%C3%A9mon)';
-link2.textContent = 'Bulbapedia - Squirtle';
+h2Evolucao.textContent = 'Evolução';
+novaEvolucao.appendChild(h2Evolucao);
 
-linkContainer2.appendChild(link2);
+const novaDivEvolucao = document.createElement('div');
 
-listaLinks.appendChild(item1);
-listaLinks.appendChild(item2);
+novaDivEvolucao.classList.add('evolucao-img');
 
-novaSection.appendChild(listaLinks);
-
-mainContent.appendChild(novaSection);
-
-// ============== Evolução ==========
-
-const sectionEvo = document.createElement('section');
-
-const imagem1 = document.createElement('img');
-imagem1.src = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png';
-imagem1.alt = 'Squirtle - Pokémon Aquático';
-imagem1.classList.add('evolucao');
+const img3 = document.createElement('img');
+img3.src = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png';
+img3.alt = 'Wartortle - Pokémon Aquático';
+img3.id = 'evolucao-wartortle';
 
 const span1 = document.createElement('span');
 span1.textContent = '1.Squirtle';
 
-sectionEvo.appendChild(imagem1);
-sectionEvo.appendChild(span1);
+novaDivEvolucao.appendChild(img3);
+novaDivEvolucao.appendChild(span1);
 
-const imagem2 = document.createElement('img');
-imagem2.src = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png';
-imagem2.alt = 'Squirtle - Pokémon Aquático';
-imagem2.classList.add('evolucao');
+const img4 = document.createElement('img');
+img4.src = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png';
+img4.alt = 'Blastoise - Pokémon Aquático';
+img4.id = 'evolucao-blastoise';
 
 const span2 = document.createElement('span');
-span2.textContent = '2.Wartortle';
+span2.textContent = '3.Blastoise';
 
-sectionEvo.appendChild(imagem2);
-sectionEvo.appendChild(span2);
-
-const imagem3 = document.createElement('img');
-imagem3.src = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png';
-imagem3.alt = 'Squirtle - Pokemon Aquático';
-imagem3.classList.add('evolucao');
+const img5 = document.createElement('img');
+img5.src = 'https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png';
+img5.alt = 'Mega Blastoise - Pokémon Aquático';
+img5.id = 'evolucao-mega-blastoise';
 
 const span3 = document.createElement('span');
-span3.textContent = '3.Blastoise';
+span3.textContent = '2.Wartortle';
 
-sectionEvo.appendChild(imagem3);
-sectionEvo.appendChild(span3);
+novaDivEvolucao.appendChild(img5);
+novaDivEvolucao.appendChild(span3);
 
-mainContent.appendChild(sectionEvo);
+novaDivEvolucao.appendChild(img4);
+novaDivEvolucao.appendChild(span2);
 
+novaEvolucao.appendChild(novaDivEvolucao);
 
+// ========== FOOTER ===========
 
+const footer = document.querySelector('footer'); 
+const footerDiv = document.createElement('div');
 
+footerDiv.classList.add('footer'); 
+footer.appendChild(footerDiv);
+
+const a1 = document.createElement('a'); 
+a1.textContent = '© 2024 Página do Pokémon Squirtle. Todos os direitos reservados';  
+footerDiv.appendChild(a1);
+
+const a2 = document.createElement('a'); 
+a2.textContent = 'Voltar para o topo'; 
+a2.href = '#Header'; 
+footerDiv.appendChild(a2);
+
+const a3 = document.createElement('a'); 
+a3.textContent = 'Contado via e-mail'; 
+a3.href = '#'; 
+footerDiv.appendChild(a3);
+
+const a4 = document.createElement('a'); 
+a4.textContent = 'Telefone: (55) 5555-5555'; 
+a4.href = '#'; 
+footerDiv.appendChild(a4);
